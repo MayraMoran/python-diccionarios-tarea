@@ -1,33 +1,39 @@
 # Tarea: Trabajando con Diccionarios en Python
 
-# 1. Crear un Diccionario
-# Se crea un diccionario llamado informacion_personal con datos ficticios.
+# 1. Crear un diccionario con información personal ficticia
 informacion_personal = {
-    "nombre": "María López",
-    "edad": 28,
-    "ciudad": "Guaranda",
-    "profesion": "Estudiante"
+    "nombre": "María López",     # Nombre ficticio
+    "edad": 28,                  # Edad ficticia (se eliminará más adelante)
+    "ciudad": "Guaranda",        # Ciudad inicial
+    "profesion": "Estudiante"    # Profesión inicial
 }
 
-# 2. Acceder y Modificar Valores
-# Se accede y se modifica el valor de la clave "ciudad".
+# 2. Acceder al valor asociado con la clave "ciudad"
 print("Ciudad original:", informacion_personal["ciudad"])
+
+# Modificar el valor de "ciudad"
 informacion_personal["ciudad"] = "Cuenca"
+print("Ciudad modificada a:", informacion_personal["ciudad"])
 
-# 3. Agrega una nueva clave-valor (en este caso, se actualiza la existente)
-# Se actualiza el valor de la clave "profesion".
+# 3. Agregar o actualizar la clave "profesion"
 informacion_personal["profesion"] = "Docente de Matemáticas"
+print("Profesión establecida en:", informacion_personal["profesion"])
 
-# 4. Verificar Existencia de Claves
-# Se verifica si la clave "telefono" existe y, si no, se agrega.
+# 4. Verificar si existe la clave "telefono"
+# Si no existe, se agrega con un número ficticio
 if "telefono" not in informacion_personal:
     informacion_personal["telefono"] = "+593987654321"
+    print('Clave "telefono" no existía: se añadió el número ficticio.')
+else:
+    print('Clave "telefono" ya existe con valor:', informacion_personal["telefono"])
 
-# 5. Eliminar una Clave
-# Se elimina la clave "edad" del diccionario.
-informacion_personal.pop("edad", None)
+# 5. Eliminar la clave "edad" porque no es necesaria
+if "edad" in informacion_personal:
+    informacion_personal.pop("edad")
+    print('Clave "edad" eliminada.')
+else:
+    print('La clave "edad" no existe; nada que eliminar.')
 
-# 6. Imprimir el Diccionario Final
-# Se imprime el diccionario resultante después de todas las operaciones.
-print("Diccionario final:")
+# 6. Imprimir el diccionario final con los cambios
+print("\nDiccionario final:")
 print(informacion_personal)
